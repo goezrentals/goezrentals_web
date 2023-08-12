@@ -10,13 +10,17 @@ import { PrismicClient } from '../prismic-configuration'
 import { getLocales } from "../lib/getLocales";
 import { createClient } from "../prismicio"
 
+import ConstructionPage from './construction';
+
 
 const Homepage = props => {
     
   const { NonQmLoansContent, QmLoansContent, actualLocale, locales, seo, generalInformation, menuContent, members, footerContent, meetTeamContent, CirclesGridContent, RealtorsResourceContent, PreApprovalProcessContent, BuyingRefinancingProcessContent, signUpContent } = props
   return<div className="main overflow-x-hidden">
 
-    EN CONSTRUCCION
+    <div className="bg-gray-100 min-h-screen">
+      <ConstructionPage />
+    </div>
           {/* <Head
             title={seo.data.title}
             description={seo.data.default_description}
