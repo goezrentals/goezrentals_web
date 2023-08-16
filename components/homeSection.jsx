@@ -6,11 +6,13 @@ import { PrismicNextLink } from '@prismicio/next';
 const HomeSection = props => {
 
   const { backgroundUrl, topText, bottomText} = props
-  console.log(backgroundUrl)
 
   return (
     <div className="bg-cover bg-center" style={{ backgroundImage: `url(${backgroundUrl}`}}>
       <div className="flex flex-col w-full h-screen text-white justify-center">
+          <div className="text-2xl text-center xl:hidden mb-28 font-bold">
+              Renting a car is so easy!
+          </div>
           <div className="text-4xl text-center font-bold">
               {topText}
           </div>

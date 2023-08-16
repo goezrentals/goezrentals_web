@@ -16,6 +16,8 @@ function MyApp({ Component, pageProps }) {
     )
   }
 
-MyApp.getServerSideProps = async (appContext) => ({ ...await App.getServerSideProps(appContext) })
+MyApp.getInitialProps = async (appContext) => ({ ...await App.getInitialProps(appContext) })
 
-export default MyApp
+export default appWithTranslation(MyApp)
+
+// export default MyApp
