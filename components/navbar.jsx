@@ -9,7 +9,7 @@ import { PrismicNextLink } from '@prismicio/next'
 
 const NavBar = props => {
 
-  const { content, logo, imageHeight, imageWidth, locales, actualLocale} = props
+  const { content, logo, imageHeight, imageWidth, actualLocale} = props
 
   let navBarLinks = []
   const [isOpen, setOpen] = useState(true);
@@ -41,7 +41,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`${element.link}`}>
-                <div className="text-shadow shadow-white text-white hover:text-blue-100 bg-pink-400 font-semibold sm:pl-1 sm:pr-1" >{element.label}</div>
+                <div className="xl:text-white text-black hover:text-blue-100 font-semibold" >{element.label}</div>
               </PrismicNextLink>
           </li>
         )
@@ -50,7 +50,7 @@ const NavBar = props => {
         navBarLinks.push(
           <li className="" key = {index}>
               <PrismicNextLink href={`/${element.link}`}>
-                <div className="text-shadow shadow-white text-white hover:text-blue-100 font-semibold ">{element.label}</div>
+                <div className="xl:text-white text-black hover:text-blue-100 font-semibold">{element.label}</div>
               </PrismicNextLink>
           </li>
         )
@@ -60,36 +60,44 @@ const NavBar = props => {
   }
 
   return (
-    <nav className="fixed flex inset-x-0 px-2 sm:px-4 xl:py-1 bg-black w-full z-50">
-      <div className="flex translate-y-11 ml-3">
-        <PrismicNextLink href="/#home" className="xl:hidden">
-          <Image className="scale-150" src={logo} width={imageWidth} height={imageHeight} alt="Vice-City-Lending-Logo"/>
-        </PrismicNextLink>
-      </div>
-      <div className="padding container flex flex-wrap xl:justify-center justify-end items-start mx-auto">
-        <button aria-label="Flip" id="flipButton" onClick={menuFlip} type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-3xl xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-          <span className="sr-only">Open main menu</span>
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-          <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-        </button>
-        <div className={`w-full xl:block xl:w-auto ${isOpen && "hidden"}`} id="mobile-menu">
-          <ul className="flex flex-col mt-4 xl:flex-row xl:space-x-8 xl:mt-0 xl:text-sm xl:font-medium items-end xl:items-start">
-            {navBarLinks}
-            <div className="pl-5 flex flex-row">
-                {locales.map((locale) => (
-                  <div className="" key={locale.id}>
-                    <PrismicNextLink href={`/${locale.id}${router.pathname}`}>
-                      <div className="shadow-white text-white hover:text-blue-100 font-semibold pl-1 pr-1">
-                      {locale.id === 'en-us' ? 'English' : locale.id === 'es-co' ? 'Español' : locale.id}
-                      </div>
-                    </PrismicNextLink>
-                  </div>
-                ))}
-              </div>
-          </ul>
+    <div className="flex flex-col">
+      <div className="hidden xl:block bg-white w-full xl:fixed z-50">
+        <div className="flex flex-row justify-between">
+          <div className="translate-x-32 -translate-y-2">
+            <PrismicNextLink href="/#home" className="">
+              <Image className="scale-150" src={logo} width={imageWidth} height={imageHeight} alt="Vice-City-Lending-Logo"/>
+            </PrismicNextLink>
+          </div>
+          <div className="">
+            <div className="flex bg-black padding paralelograma mt-5 -ml-20 text-white"></div>
+            <div className="-translate-y-7 -translate-x-20 ml-5 text-white">
+                Renting a Car is so easy!
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+      <div>
+        <nav className="xl:mt-20 fixed flex inset-x-0 px-2 sm:px-4 xl:py-1 xl:bg-[#e56608ff] bg-white w-full z-50">
+          <div className="flex ml-3">
+            <PrismicNextLink href="/#home" className="xl:hidden">
+              <Image className="scale-150" src={logo} width={imageWidth} height={imageHeight} alt="Vice-City-Lending-Logo"/>
+            </PrismicNextLink>
+          </div>
+          <div className="padding container flex flex-wrap xl:justify-center justify-end items-start mx-auto">
+            <button aria-label="Flip" id="flipButton" onClick={menuFlip} type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-3xl xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+              <span className="sr-only">Open main menu</span>
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+              <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+            </button>
+            <div className={`w-full xl:block xl:w-auto ${isOpen && "hidden"}`} id="mobile-menu">
+              <ul className="flex flex-col mt-4 xl:flex-row xl:space-x-8 xl:mt-0 xl:text-sm xl:font-medium items-end xl:items-start">
+                {navBarLinks}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
   );
 }
 

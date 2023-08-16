@@ -27,6 +27,30 @@ $menu-item-active-background-color: $app-color1;
   height: 100%;
 }
 
+.padding{
+  padding: 1rem;
+}
+
+.paralelograma {
+  width: 115%;
+  height: 10%;
+  top: 0;
+	left: 0;
+  -webkit-transform: skew(-20deg);
+     -moz-transform: skew(-20deg);
+       -o-transform: skew(-20deg);
+  }
+
+  .paralelograma2 {
+    width: 100%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    -webkit-transform: skew(-20deg);
+       -moz-transform: skew(-20deg);
+         -o-transform: skew(-20deg);
+    }
+
 @keyframes spin-horizontal {
   from {
     transform: rotateY(0deg);

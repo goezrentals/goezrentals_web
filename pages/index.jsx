@@ -2,6 +2,7 @@ import React from "react";
 import Head from "../components/head";
 import NavBar from "../components/navbar";
 import Contact from "./contact"; //Different from component/contact.jsx. <Contact> in component folder is for Popup.
+import HomeSection from '../components/homeSection';
 
 
 
@@ -15,13 +16,10 @@ import ConstructionPage from './construction';
 
 const Homepage = props => {
     
-  const { NonQmLoansContent, QmLoansContent, actualLocale, locales, seo, generalInformation, menuContent, members, footerContent, meetTeamContent, CirclesGridContent, RealtorsResourceContent, PreApprovalProcessContent, BuyingRefinancingProcessContent, signUpContent } = props
+  const { homeContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
+  console.log(homeContent)
   return<div className="main overflow-x-hidden">
-
-    <div className="bg-gray-100 min-h-screen">
-      <ConstructionPage />
-    </div>
-          {/* <Head
+          <Head
             title={seo.data.title}
             description={seo.data.default_description}
             keywords={seo.data.default_keywords}
@@ -33,9 +31,15 @@ const Homepage = props => {
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
               imageHeight={generalInformation.data.small_logo_height}
-              locales={locales}
+              // locales={locales}
               actualLocale={actualLocale}
-            /> */}
+            />
+          <HomeSection
+            backgroundUrl={homeContent.data.background_image.url}
+            topText={homeContent.data.top_text}
+            bottomText={homeContent.data.bottom_text}
+          />
+          <ConstructionPage />
         </div>
 }
 
@@ -44,9 +48,10 @@ const getStaticProps = async ({ params, locale, previewData }) => {
   const locales = await getLocales(client)
   return {
       props: {
-        // seo: await getPrismicData('seo', locale),
-        // generalInformation: await getPrismicData('general_information', locale),
-        // menuContent: await getPrismicData('menu', locale),
+        seo: await getPrismicData('seo', locale),
+        generalInformation: await getPrismicData('general_information', locale),
+        menuContent: await getPrismicData('menu', locale),
+        homeContent: await getPrismicData('home_section',locale)
         // members: await getPrismicCustomTypeData('member', locale), // Different Function to query multi instances.
         // footerContent: await getPrismicData('footer', locale),
         // meetTeamContent: await getPrismicData('meet_team', locale),
