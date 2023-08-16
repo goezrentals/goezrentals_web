@@ -48,10 +48,10 @@ const getStaticProps = async ({ params, locale, previewData }) => {
   const locales = await getLocales(client)
   return {
       props: {
-        seo: await getPrismicData('seo', locale),
-        generalInformation: await getPrismicData('general_information', locale),
-        menuContent: await getPrismicData('menu', locale),
-        homeContent: await getPrismicData('home_section',locale)
+        seo: await getPrismicData('seo'),
+        generalInformation: await getPrismicData('general_information'),
+        menuContent: await getPrismicData('menu'),
+        homeContent: await getPrismicData('home_section')
         // members: await getPrismicCustomTypeData('member', locale), // Different Function to query multi instances.
         // footerContent: await getPrismicData('footer', locale),
         // meetTeamContent: await getPrismicData('meet_team', locale),
@@ -69,18 +69,18 @@ const getStaticProps = async ({ params, locale, previewData }) => {
 }
 
 // Wrapper for prismic functions
-const getPrismicData = async (name, lang) => {
+const getPrismicData = async (name) => {
   const prismicAnswer = await PrismicClient().query(  
-    Prismic.Predicates.at('document.type', name),{ lang } 
+    Prismic.Predicates.at('document.type', name)
   )
   // Get first doc of this type (there should be 1 doc per type)
   const doc = prismicAnswer.results[0]
   return doc
 }
 
-const getPrismicCustomTypeData = async (name, lang) => {
+const getPrismicCustomTypeData = async (name) => {
   const prismicAnswer = await PrismicClient().query(  
-    Prismic.Predicates.at('document.type', name), { lang }  
+    Prismic.Predicates.at('document.type', name)
   )
   // Get all docs of this type (there should many docs per type)
   const CustomTypeDoc = prismicAnswer.results
