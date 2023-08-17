@@ -1,9 +1,8 @@
 import React from "react";
 import Head from "../components/head";
 import NavBar from "../components/navbar";
-import Contact from "./contact"; //Different from component/contact.jsx. <Contact> in component folder is for Popup.
-import HomeSection from '../components/homeSection';
-
+import HomeSection from '../components/sections/homeSection';
+import RentSection from '../components/sections/rentSection';
 
 
 import Prismic from 'prismic-javascript'
@@ -16,7 +15,7 @@ import ConstructionPage from './construction';
 
 const Homepage = props => {
     
-  const { homeContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
+  const { homeContent, rentContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
   return<div className="main overflow-x-hidden">
           <Head
             title={seo.data.title}
@@ -38,6 +37,11 @@ const Homepage = props => {
             topText={homeContent.data.top_text}
             bottomText={homeContent.data.bottom_text}
           />
+          <RentSection
+            backgroundUrl={rentContent.data.background_image.url}
+            titleText={rentContent.data.title_text}
+            bodyText={rentContent.data.body_text}
+          />
           {/* <ConstructionPage /> */}
         </div>
 }
@@ -50,7 +54,8 @@ const getStaticProps = async ({ params, locale, previewData }) => {
         seo: await getPrismicData('seo', locale),
         generalInformation: await getPrismicData('general_information', locale),
         menuContent: await getPrismicData('menu', locale),
-        homeContent: await getPrismicData('home_section',locale)
+        homeContent: await getPrismicData('home_section',locale),
+        rentContent: await getPrismicData('rent_section',locale),
         // members: await getPrismicCustomTypeData('member', locale), // Different Function to query multi instances.
         // footerContent: await getPrismicData('footer', locale),
         // meetTeamContent: await getPrismicData('meet_team', locale),

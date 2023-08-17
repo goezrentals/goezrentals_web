@@ -5,6 +5,191 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for About Section documents
+ */
+interface AboutSectionDocumentData {
+  /**
+   * Background Image field in *About Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Title Text field in *About Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.title_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_text: prismic.KeyTextField;
+
+  /**
+   * Body Text field in *About Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.body_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_text: prismic.RichTextField;
+}
+
+/**
+ * About Section document from Prismic
+ *
+ * - **API ID**: `about_section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutSectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<AboutSectionDocumentData>,
+    "about_section",
+    Lang
+  >;
+
+/**
+ * Content for Contact Section documents
+ */
+interface ContactSectionDocumentData {
+  /**
+   * Background Image field in *Contact Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Title Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.title_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_text: prismic.KeyTextField;
+
+  /**
+   * Body Text field in *Contact Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.body_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_text: prismic.RichTextField;
+
+  /**
+   * Contact Request Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.contact_request_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_request_text: prismic.KeyTextField;
+
+  /**
+   * First Name Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.first_name_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  first_name_text: prismic.KeyTextField;
+
+  /**
+   * Last Name Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.last_name_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  last_name_text: prismic.KeyTextField;
+
+  /**
+   * Email Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.email_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_text: prismic.KeyTextField;
+
+  /**
+   * Phone Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.phone_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_text: prismic.KeyTextField;
+
+  /**
+   * Comments Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.comments_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  comments_text: prismic.KeyTextField;
+
+  /**
+   * Send Button Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.send_button_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  send_button_text: prismic.KeyTextField;
+}
+
+/**
+ * Contact Section document from Prismic
+ *
+ * - **API ID**: `contact_section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactSectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ContactSectionDocumentData>,
+    "contact_section",
+    Lang
+  >;
+
+/**
  * Content for General Information documents
  */
 interface GeneralInformationDocumentData {
@@ -166,6 +351,60 @@ export type MenuDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<MenuDocumentData>, "menu", Lang>;
 
 /**
+ * Content for Rent Section documents
+ */
+interface RentSectionDocumentData {
+  /**
+   * Background Image field in *Rent Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rent_section.background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Title Text field in *Rent Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rent_section.title_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_text: prismic.KeyTextField;
+
+  /**
+   * Body Text field in *Rent Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rent_section.body_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_text: prismic.RichTextField;
+}
+
+/**
+ * Rent Section document from Prismic
+ *
+ * - **API ID**: `rent_section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RentSectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<RentSectionDocumentData>,
+    "rent_section",
+    Lang
+  >;
+
+/**
  * Content for SEO documents
  */
 interface SeoDocumentData {
@@ -237,11 +476,69 @@ interface SeoDocumentData {
 export type SeoDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<SeoDocumentData>, "seo", Lang>;
 
+/**
+ * Content for Share Section documents
+ */
+interface ShareSectionDocumentData {
+  /**
+   * Background Image field in *Share Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: share_section.background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Title Text field in *Share Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: share_section.title_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_text: prismic.KeyTextField;
+
+  /**
+   * Body Text field in *Share Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: share_section.body_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_text: prismic.RichTextField;
+}
+
+/**
+ * Share Section document from Prismic
+ *
+ * - **API ID**: `share_section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ShareSectionDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ShareSectionDocumentData>,
+    "share_section",
+    Lang
+  >;
+
 export type AllDocumentTypes =
+  | AboutSectionDocument
+  | ContactSectionDocument
   | GeneralInformationDocument
   | HomeSectionDocument
   | MenuDocument
-  | SeoDocument;
+  | RentSectionDocument
+  | SeoDocument
+  | ShareSectionDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -253,14 +550,22 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutSectionDocument,
+      AboutSectionDocumentData,
+      ContactSectionDocument,
+      ContactSectionDocumentData,
       GeneralInformationDocument,
       GeneralInformationDocumentData,
       HomeSectionDocument,
       HomeSectionDocumentData,
       MenuDocument,
       MenuDocumentData,
+      RentSectionDocument,
+      RentSectionDocumentData,
       SeoDocument,
       SeoDocumentData,
+      ShareSectionDocument,
+      ShareSectionDocumentData,
       AllDocumentTypes,
     };
   }
