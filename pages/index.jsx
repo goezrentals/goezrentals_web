@@ -3,6 +3,9 @@ import Head from "../components/head";
 import NavBar from "../components/navbar";
 import HomeSection from '../components/sections/homeSection';
 import RentSection from '../components/sections/rentSection';
+import ShareSection from '../components/sections/shareSection';
+import AboutSection from '../components/sections/aboutSection';
+import ContactSection from '../components/sections/contactSection';
 
 
 import Prismic from 'prismic-javascript'
@@ -15,7 +18,7 @@ import ConstructionPage from './construction';
 
 const Homepage = props => {
     
-  const { homeContent, rentContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
+  const { homeContent, rentContent, shareContent, aboutContent, contactContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
   return<div className="main overflow-x-hidden">
           <Head
             title={seo.data.title}
@@ -42,6 +45,21 @@ const Homepage = props => {
             titleText={rentContent.data.title_text}
             bodyText={rentContent.data.body_text}
           />
+          <ShareSection
+            backgroundUrl={shareContent.data.background_image.url}
+            titleText={shareContent.data.title_text}
+            bodyText={shareContent.data.body_text}
+          />
+          <AboutSection
+            backgroundUrl={aboutContent.data.background_image.url}
+            titleText={aboutContent.data.title_text}
+            bodyText={aboutContent.data.body_text}
+          />
+          <ContactSection
+            backgroundUrl={contactContent.data.background_image.url}
+            titleText={contactContent.data.title_text}
+            bodyText={contactContent.data.body_text}
+          />
           <ConstructionPage />
         </div>
 }
@@ -56,6 +74,9 @@ const getStaticProps = async ({ params, locale, previewData }) => {
         menuContent: await getPrismicData('menu', locale),
         homeContent: await getPrismicData('home_section',locale),
         rentContent: await getPrismicData('rent_section',locale),
+        shareContent: await getPrismicData('share_section',locale),
+        aboutContent: await getPrismicData('about_section',locale),
+        contactContent: await getPrismicData('contact_section',locale),
         // members: await getPrismicCustomTypeData('member', locale), // Different Function to query multi instances.
         // footerContent: await getPrismicData('footer', locale),
         // meetTeamContent: await getPrismicData('meet_team', locale),

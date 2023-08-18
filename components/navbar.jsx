@@ -70,7 +70,7 @@ const NavBar = props => {
           </div>
           <div className="">
             <div className="flex bg-black padding paralelograma mt-5 -ml-20 text-white"></div>
-            <div className="-translate-y-7 -translate-x-20 ml-5 text-white">
+            <div className="-translate-y-7 -translate-x-20 ml-5 text-white font-bold">
                 Renting a Car is so easy!
             </div>
           </div>

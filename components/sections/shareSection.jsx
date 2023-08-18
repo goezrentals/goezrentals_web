@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PrismicRichText } from "@prismicio/react"
 
 
-const RentSection = props => {
+const ShareSection = props => {
 
   const { backgroundUrl, titleText, bodyText} = props
 
@@ -28,4 +28,4 @@ const RentSection = props => {
   );
 }
 
-export default RentSection;
+export default ShareSection;
