@@ -42,7 +42,7 @@ const Homepage = props => {
             titleText={rentContent.data.title_text}
             bodyText={rentContent.data.body_text}
           />
-          {/* <ConstructionPage /> */}
+          <ConstructionPage />
         </div>
 }
 
