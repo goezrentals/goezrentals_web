@@ -9,7 +9,7 @@ const HomeSection = props => {
 
   return (
     <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${backgroundUrl}`}}>
-      <div className="flex flex-col w-full text-white justify-center">
+      <div className="flex flex-col w-full text-white justify-center h-screen">
           <div className="mt-44 text-2xl text-center xl:hidden mb-28 font-bold">
               Renting a car is so easy!
           </div>
