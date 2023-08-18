@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { useRouter } from 'next/router';
-import { PrismicNextLink } from '@prismicio/next';
+import React from "react";
+
 
 const HomeSection = props => {
 
@@ -10,14 +8,16 @@ const HomeSection = props => {
   return (
     <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${backgroundUrl}`}}>
       <div className="flex flex-col w-full text-white justify-center h-screen">
-          <div className="mt-44 text-2xl text-center xl:hidden mb-28 font-bold">
+          <div className="text-2xl text-center xl:hidden mb-28 font-bold">
               Renting a car is so easy!
           </div>
           <div className="text-4xl text-center font-bold">
               {topText}
           </div>
-          <div className="pr-5 pl-5 text-6xl bg-[#e56608ff] text-center w-min self-center paralelograma2 font-extrabold">
+          <div className="pr-5 pl-5 h-12 text-6xl bg-[#e56608ff] text-center self-center -skew-y-12 rotate-12 font-extrabold">
+            <div className="-translate-y-2">
               {bottomText}
+            </div>
           </div>
       </div>
     </div>
