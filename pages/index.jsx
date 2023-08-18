@@ -1,4 +1,6 @@
 import React from "react";
+
+// Components Importations Section 
 import Head from "../components/head";
 import NavBar from "../components/navbar";
 import HomeSection from '../components/sections/homeSection';
@@ -6,7 +8,6 @@ import RentSection from '../components/sections/rentSection';
 import ShareSection from '../components/sections/shareSection';
 import AboutSection from '../components/sections/aboutSection';
 import ContactSection from '../components/sections/contactSection';
-
 
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../prismic-configuration'
@@ -32,7 +33,7 @@ const Homepage = props => {
               logo={generalInformation.data.small_logo.url}
               imageWidth={generalInformation.data.small_logo_width}
               imageHeight={generalInformation.data.small_logo_height}
-              // locales={locales}
+              locales={locales}
               actualLocale={actualLocale}
             />
           <HomeSection
@@ -77,18 +78,8 @@ const getStaticProps = async ({ params, locale, previewData }) => {
         shareContent: await getPrismicData('share_section',locale),
         aboutContent: await getPrismicData('about_section',locale),
         contactContent: await getPrismicData('contact_section',locale),
-        // members: await getPrismicCustomTypeData('member', locale), // Different Function to query multi instances.
-        // footerContent: await getPrismicData('footer', locale),
-        // meetTeamContent: await getPrismicData('meet_team', locale),
-        // RealtorsResourceContent: await getPrismicData('realtors_resource', locale),
-        // PreApprovalProcessContent: await getPrismicData('pre_approval_process', locale),
-        // BuyingRefinancingProcessContent: await getPrismicData('buying_refinancing_process', locale), 
-        // signUpContent : await getPrismicData('sign_up', locale),
-        // CirclesGridContent : await getPrismicData('circle_grid_info', locale),
-        // QmLoansContent : await getPrismicData('qm_loans', locale),
-        // NonQmLoansContent : await getPrismicData('non_qm_loans', locale),
-        // locales: locales,
-        // actualLocale: locale
+        locales: locales,
+        actualLocale: locale
       }
   }
 }

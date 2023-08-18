@@ -9,14 +9,14 @@ import { PrismicNextLink } from '@prismicio/next'
 
 const NavBar = props => {
 
-  const { content, logo, imageHeight, imageWidth, actualLocale} = props
+  const { content, logo, imageHeight, imageWidth, actualLocale, customText} = props
 
   let navBarLinks = []
   const [isOpen, setOpen] = useState(true);
   const menuFlip = () => {setOpen(!isOpen)};
   const router = useRouter()
 
-
+// Uso un UseEffect para manejar la accón de que se cierre el menú automaticamente cuándo se hace alguna clase de scrolling.
   useEffect(() => {
     let timeoutId;
 
@@ -37,6 +37,7 @@ const NavBar = props => {
   if (content !== undefined) {
     content.forEach((element, index, array)  => {
 
+      // Este if se mantiene para usar la edición y customización del último elemento de la Navbar. 
       if(index  === (array.length - 1)) {
         navBarLinks.push(
           <li className="" key = {index}>
@@ -71,6 +72,7 @@ const NavBar = props => {
           <div className="">
             <div className="flex bg-black padding paralelograma mt-5 -ml-20 text-white"></div>
             <div className="-translate-y-7 -translate-x-20 ml-5 text-white font-bold">
+                {customText}
                 Renting a Car is so easy!
             </div>
           </div>

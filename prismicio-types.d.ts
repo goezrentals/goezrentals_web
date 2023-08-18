@@ -279,6 +279,17 @@ interface HomeSectionDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   bottom_text: prismic.KeyTextField;
+
+  /**
+   * Custom Text field in *Home Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_section.custom_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  custom_text: prismic.KeyTextField;
 }
 
 /**

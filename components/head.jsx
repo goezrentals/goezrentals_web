@@ -1,10 +1,10 @@
 import NextHead from 'next/head'
 import { string } from 'prop-types'
 
-const defaultDescription = 'Lending Company'
-const defaultKeywords = 'Lending Mortgage Buy Home'
-const defaultOGURL = 'https://vicecitylending.net'
-const defaultOGImage = 'https://ik.imagekit.io/glunico/favicon_CIELL2u7gJ8Q.png?ik-sdk-version=javascript-1.4.3&updatedAt=1643929323762'
+const defaultDescription = 'Go!EZ Rentals - Car Rentals in Central Florida'
+const defaultKeywords = 'Car Rentals, Vehicle Rental, Central Florida'
+const defaultOGURL = 'https://goezrentalsfl.com/'
+const defaultOGImage = 'https://ik.imagekit.io/jvd1y2xha/GO!EZ-OgImage.png?updatedAt=1692330555823'
 
 
 const Head = (props) => {
@@ -14,20 +14,28 @@ const Head = (props) => {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={props.description || defaultDescription} />
     <meta name="keywords" content={props.keywords || defaultKeywords} />
+
+    {/* Favicon */}
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
     <link rel="shortcut icon" href="/static/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
     <link rel="mask-icon" href="/static/favicon-mask.svg" color="#000000" />
+
+    {/* Open Graph / Social Media Meta Tags */}
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ''} />
-    <meta property="og:description" content={props.description || defaultDescription} />
-    <meta name="twitter:site" content={props.url || defaultOGURL} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
+    <meta property="og:description" content="Rent a car easily with Go!EZ Rentals. We offer a wide variety of vehicle options and styles in Central Florida." />
     <meta property="og:image" content={props.ogImage || defaultOGImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+
+    {/* Twitter Card Meta Tags */}
+    <meta name="twitter:site" content={props.url || defaultOGURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
+    <meta name="twitter:title" content="Go!EZ Rentals - Car Rentals in Central Florida" />
+    <meta name="twitter:description" content="Rent a car easily with Go!EZ Rentals. We offer a wide variety of vehicle options and styles in Central Florida." />
   </NextHead>
 }
 

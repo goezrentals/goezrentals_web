@@ -22,6 +22,10 @@
       "bottom_text": {
         "type": "Text",
         "config": { "label": "Bottom Text", "placeholder": "" }
+      },
+      "custom_text": {
+        "type": "Text",
+        "config": { "label": "Custom Text", "placeholder": "" }
       }
     }
   }
