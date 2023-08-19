@@ -13,7 +13,7 @@ const CatalogSection = ({ vehiclesList, bookNowText }) => {
 
           if(index  === (array.length - 1) && !(array.length % 2 === 0)) {
             vehiclesComponents.push(
-                <div className="flex justify-center col-span-2 padding " key={index}>
+                <div className="flex justify-center col-span-2 padding hover:scale-110 transition duration-500" key={index}>
                     <div className="flex flex-col">
                         <PrismicNextLink href={element.data.turo_url} className="">
                         <Image
@@ -37,7 +37,7 @@ const CatalogSection = ({ vehiclesList, bookNowText }) => {
           }
           else {
             vehiclesComponents.push(
-                <div className="flex justify-center padding" key={index}>
+                <div className="flex justify-center padding hover:scale-110 transition duration-500" key={index}>
                     <div className="flex flex-col ">
                         <PrismicNextLink href={element.data.turo_url} className="">
                         <Image

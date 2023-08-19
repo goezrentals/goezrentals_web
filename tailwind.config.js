@@ -33,8 +33,12 @@ module.exports = withMT({
     
     extend: {
       fontFamily: {
-        'franklin': ['Franklin', 'sans-serif']
-
+        'trebuchet-bold-italic': ['Trebuchet MS', 'Bold Italic', 'sans-serif'],
+        'trebuchet-bold': ['Trebuchet MS', 'Bold', 'sans-serif'],
+        'lato-regular': ['Lato', 'Regular', 'sans-serif'],
+        'lato-italic': ['Lato', 'Italic', 'sans-serif'],
+        'lato-bold': ['Lato', 'Bold', 'sans-serif'],
+        'lato-black': ['Lato', 'Black', 'sans-serif'],
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
