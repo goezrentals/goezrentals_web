@@ -7,7 +7,7 @@ const RentSection = props => {
   const { backgroundUrl, titleText, bodyText} = props
 
   return (
-    <div>
+    <div id="rent">
         <SkewObject background={backgroundUrl} title={titleText} body={bodyText}/>
     </div>
   );

@@ -7,7 +7,7 @@ const ContactSection = props => {
   const { backgroundUrl, titleText, bodyText} = props
 
   return (
-    <div>
+    <div id="contact">
         <SkewObject background={backgroundUrl} title={titleText} body={bodyText}/>
     </div>
   );

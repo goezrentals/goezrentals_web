@@ -8,6 +8,8 @@ import RentSection from '../components/sections/rentSection';
 import ShareSection from '../components/sections/shareSection';
 import AboutSection from '../components/sections/aboutSection';
 import ContactSection from '../components/sections/contactSection';
+import CatalogSection from '../components/sections/catalogSection';
+
 
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from '../prismic-configuration'
@@ -19,7 +21,7 @@ import ConstructionPage from './construction';
 
 const Homepage = props => {
     
-  const { homeContent, rentContent, shareContent, aboutContent, contactContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
+  const { homeContent, rentContent, shareContent, aboutContent, contactContent, vehiclesContent, actualLocale, locales, seo, generalInformation, menuContent, signUpContent } = props
   return<div className="main overflow-x-hidden">
           <Head
             title={seo.data.title}
@@ -46,6 +48,9 @@ const Homepage = props => {
             titleText={rentContent.data.title_text}
             bodyText={rentContent.data.body_text}
           />
+          <CatalogSection
+            vehiclesList={vehiclesContent}
+          />
           <ShareSection
             backgroundUrl={shareContent.data.background_image.url}
             titleText={shareContent.data.title_text}
@@ -61,7 +66,6 @@ const Homepage = props => {
             titleText={contactContent.data.title_text}
             bodyText={contactContent.data.body_text}
           />
-          <ConstructionPage />
         </div>
 }
 
@@ -78,6 +82,7 @@ const getStaticProps = async ({ params, locale, previewData }) => {
         shareContent: await getPrismicData('share_section',locale),
         aboutContent: await getPrismicData('about_section',locale),
         contactContent: await getPrismicData('contact_section',locale),
+        vehiclesContent: await getPrismicCustomTypeData('vehicle',locale),
         locales: locales,
         actualLocale: locale
       }
@@ -87,8 +92,8 @@ const getStaticProps = async ({ params, locale, previewData }) => {
 // Wrapper for prismic functions
 const getPrismicData = async (name, lang) => {
   const prismicAnswer = await PrismicClient().query(  
-    Prismic.Predicates.at('document.type', name),{ lang } 
-  )
+    Prismic.Predicates.at('document.type', name),{ lang })
+
   // Get first doc of this type (there should be 1 doc per type)
   const doc = prismicAnswer.results[0]
   return doc
@@ -96,8 +101,8 @@ const getPrismicData = async (name, lang) => {
 
 const getPrismicCustomTypeData = async (name, lang) => {
   const prismicAnswer = await PrismicClient().query(  
-    Prismic.Predicates.at('document.type', name), { lang }  
-  )
+    Prismic.Predicates.at('document.type', name), { lang })
+
   // Get all docs of this type (there should many docs per type)
   const CustomTypeDoc = prismicAnswer.results
   return CustomTypeDoc

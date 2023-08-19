@@ -7,7 +7,7 @@ const ShareSection = props => {
   const { backgroundUrl, titleText, bodyText} = props
 
   return (
-    <div>
+    <div id="share">
         <SkewObject background={backgroundUrl} title={titleText} body={bodyText}/>
     </div>
   );

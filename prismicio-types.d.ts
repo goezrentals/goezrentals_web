@@ -541,6 +541,82 @@ export type ShareSectionDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Vehicle documents
+ */
+interface VehicleDocumentData {
+  /**
+   * Name field in *Vehicle*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vehicle.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Year field in *Vehicle*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vehicle.year
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  year: prismic.KeyTextField;
+
+  /**
+   * Vehicle Image field in *Vehicle*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vehicle.vehicle_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  vehicle_image: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Vehicle*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vehicle.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Turo URL field in *Vehicle*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vehicle.turo_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  turo_url: prismic.KeyTextField;
+}
+
+/**
+ * Vehicle document from Prismic
+ *
+ * - **API ID**: `vehicle`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type VehicleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<VehicleDocumentData>,
+    "vehicle",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AboutSectionDocument
   | ContactSectionDocument
@@ -549,7 +625,8 @@ export type AllDocumentTypes =
   | MenuDocument
   | RentSectionDocument
   | SeoDocument
-  | ShareSectionDocument;
+  | ShareSectionDocument
+  | VehicleDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -577,6 +654,8 @@ declare module "@prismicio/client" {
       SeoDocumentData,
       ShareSectionDocument,
       ShareSectionDocumentData,
+      VehicleDocument,
+      VehicleDocumentData,
       AllDocumentTypes,
     };
   }

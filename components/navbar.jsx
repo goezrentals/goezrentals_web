@@ -9,7 +9,7 @@ import { PrismicNextLink } from '@prismicio/next'
 
 const NavBar = props => {
 
-  const { content, logo, imageHeight, imageWidth, actualLocale, customText} = props
+  const { content, logo, imageHeight, imageWidth, locales, actualLocale, customText} = props
 
   let navBarLinks = []
   const [isOpen, setOpen] = useState(true);
@@ -94,6 +94,17 @@ const NavBar = props => {
             <div className={`w-full xl:block xl:w-auto ${isOpen && "hidden"}`} id="mobile-menu">
               <ul className="flex flex-col mt-4 xl:flex-row xl:space-x-8 xl:mt-0 xl:text-sm xl:font-medium items-end xl:items-start">
                 {navBarLinks}
+                <div className="pl-5 flex flex-row">
+                {locales.map((locale) => (
+                  <div className="" key={locale.id}>
+                    <PrismicNextLink href={`/${locale.id}${router.pathname}`}>
+                      <div className="shadow-white text-white hover:text-blue-100 font-semibold pl-1 pr-1">
+                      {locale.id === 'en-us' ? 'English' : locale.id === 'es-co' ? 'Español' : locale.id}
+                      </div>
+                    </PrismicNextLink>
+                  </div>
+                ))}
+              </div>
               </ul>
             </div>
           </div>
