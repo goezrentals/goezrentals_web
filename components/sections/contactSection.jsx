@@ -6,7 +6,6 @@ import Contact from "../contact";
 const ContactSection = props => {
 
   const { contentContact} = props
-  console.log(contentContact)
 
   return (
     <div id="contact" className="flex flex-col">

@@ -95,7 +95,7 @@ const Contact = props => {
 
                   {/* Name Field */}
                   <div className="mb-1">
-                    <label className="text-left text-[#e56608ff] block text-black sm:text-2xl" htmlFor="name">
+                    <label className="text-left text-[#e56608ff] block sm:text-2xl" htmlFor="name">
                       {contactContent.first_name_text}
                     </label>
                     <input onChange={handleOnChange} className="shadow appearance-none border border-[#e56608ff] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text"  placeholder={contactContent.name_placeholder}></input>
@@ -103,7 +103,7 @@ const Contact = props => {
 
                   {/* Lastname Field */}
                   <div className="mb-1">
-                    <label className="text-left text-[#e56608ff] block text-black sm:text-2xl" htmlFor="lastname">
+                    <label className="text-left text-[#e56608ff] block sm:text-2xl" htmlFor="lastname">
                       {contactContent.last_name_text}
                     </label>
                     <input onChange={handleOnChange} className="shadow appearance-none border border-[#e56608ff] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lastname" type="text" placeholder={contactContent.lastname_placeholder}></input>
@@ -111,7 +111,7 @@ const Contact = props => {
 
                   {/* Email Field */}
                   <div className="mb-1">
-                    <label className="text-left text-[#e56608ff] block text-black sm:text-2xl" htmlFor="email">
+                    <label className="text-left text-[#e56608ff] block sm:text-2xl" htmlFor="email">
                       {contactContent.email_text}
                     </label>
                     <input onChange={handleOnChange} className="shadow appearance-none border border-[#e56608ff] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder={contactContent.email_placeholder}></input>
@@ -119,7 +119,7 @@ const Contact = props => {
 
                   {/* Phone Field */}
                   <div className="mb-5">
-                    <label className="text-left text-[#e56608ff] block text-black sm:text-2xl" htmlFor="phone">
+                    <label className="text-left text-[#e56608ff] block sm:text-2xl" htmlFor="phone">
                       {contactContent.phone_text}
                     </label>
                     <input onChange={handleOnChange} className="shadow appearance-none border border-[#e56608ff] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" placeholder={contactContent.phone_placeholder}></input>
