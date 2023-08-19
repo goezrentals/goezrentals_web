@@ -23,9 +23,9 @@
         "type": "Text",
         "config": { "label": "Bottom Text", "placeholder": "" }
       },
-      "custom_text": {
+      "slogan_text": {
         "type": "Text",
-        "config": { "label": "Custom Text", "placeholder": "" }
+        "config": { "label": "Slogan Text", "placeholder": "" }
       }
     }
   }

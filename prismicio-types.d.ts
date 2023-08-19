@@ -225,6 +225,17 @@ interface GeneralInformationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   small_logo_height: prismic.KeyTextField;
+
+  /**
+   * Book Now Text field in *General Information*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: general_information.book_now_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  book_now_text: prismic.KeyTextField;
 }
 
 /**
@@ -281,15 +292,15 @@ interface HomeSectionDocumentData {
   bottom_text: prismic.KeyTextField;
 
   /**
-   * Custom Text field in *Home Section*
+   * Slogan Text field in *Home Section*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home_section.custom_text
+   * - **API ID Path**: home_section.slogan_text
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  custom_text: prismic.KeyTextField;
+  slogan_text: prismic.KeyTextField;
 }
 
 /**

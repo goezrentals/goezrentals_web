@@ -37,11 +37,13 @@ const Homepage = props => {
               imageHeight={generalInformation.data.small_logo_height}
               locales={locales}
               actualLocale={actualLocale}
+              sloganText={homeContent.data.slogan_text}
             />
           <HomeSection
             backgroundUrl={homeContent.data.background_image.url}
             topText={homeContent.data.top_text}
             bottomText={homeContent.data.bottom_text}
+            sloganText={homeContent.data.slogan_text}
           />
           <RentSection
             backgroundUrl={rentContent.data.background_image.url}
@@ -50,6 +52,7 @@ const Homepage = props => {
           />
           <CatalogSection
             vehiclesList={vehiclesContent}
+            bookNowText={generalInformation.data.book_now_text}
           />
           <ShareSection
             backgroundUrl={shareContent.data.background_image.url}

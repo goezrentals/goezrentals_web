@@ -18,6 +18,10 @@
       "small_logo_height": {
         "type": "Text",
         "config": { "label": "Small Logo Height", "placeholder": "" }
+      },
+      "book_now_text": {
+        "type": "Text",
+        "config": { "label": "Book Now Text", "placeholder": "" }
       }
     }
   }

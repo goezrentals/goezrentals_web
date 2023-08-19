@@ -2,7 +2,7 @@ import React from "react";
 import { PrismicNextLink } from '@prismicio/next'
 import Image from "next/image"
 
-const CatalogSection = ({ vehiclesList }) => {
+const CatalogSection = ({ vehiclesList, bookNowText }) => {
 
     let vehiclesComponents = []
     if (vehiclesList !== undefined) {
@@ -27,7 +27,7 @@ const CatalogSection = ({ vehiclesList }) => {
                         <div>
                             <PrismicNextLink href={element.data.turo_url} className="">
                                 <div className="mr-6 ml-auto text-white h-auto text-center text-xl font-bold bg-[#e56608ff] -skew-x-12 w-1/3">
-                                    BOOK NOW
+                                    {bookNowText}
                                 </div>
                             </PrismicNextLink>
                         </div>
@@ -51,7 +51,7 @@ const CatalogSection = ({ vehiclesList }) => {
                         <div>
                             <PrismicNextLink href={element.data.turo_url} className="">
                                 <div className="mr-6 ml-auto text-white h-auto text-center text-xl font-bold bg-[#e56608ff] -skew-x-12 w-1/3">
-                                    BOOK NOW
+                                    {bookNowText}
                                 </div>
                             </PrismicNextLink>
                         </div>
