@@ -171,6 +171,17 @@ interface ContactSectionDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   send_button_text: prismic.KeyTextField;
+
+  /**
+   * Sent Message Text field in *Contact Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_section.sent_message_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sent_message_text: prismic.KeyTextField;
 }
 
 /**

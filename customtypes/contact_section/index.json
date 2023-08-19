@@ -55,6 +55,10 @@
       "send_button_text": {
         "type": "Text",
         "config": { "label": "Send Button Text", "placeholder": "" }
+      },
+      "sent_message_text": {
+        "type": "Text",
+        "config": { "label": "Sent Message Text", "placeholder": "" }
       }
     }
   }

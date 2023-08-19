@@ -65,9 +65,7 @@ const Homepage = props => {
             bodyText={aboutContent.data.body_text}
           />
           <ContactSection
-            backgroundUrl={contactContent.data.background_image.url}
-            titleText={contactContent.data.title_text}
-            bodyText={contactContent.data.body_text}
+            contentContact={contactContent}
           />
         </div>
 }

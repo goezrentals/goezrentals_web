@@ -1,14 +1,16 @@
 import React from "react";
-import SkewObject from "../molecules/skewObject";
+import ContactSkewObject from "../molecules/contactSkewObject";
+import Contact from "../contact";
 
 
 const ContactSection = props => {
 
-  const { backgroundUrl, titleText, bodyText} = props
+  const { contentContact} = props
+  console.log(contentContact)
 
   return (
-    <div id="contact">
-        <SkewObject background={backgroundUrl} title={titleText} body={bodyText}/>
+    <div id="contact" className="flex flex-col">
+        <ContactSkewObject content={contentContact} />
     </div>
   );
 }
