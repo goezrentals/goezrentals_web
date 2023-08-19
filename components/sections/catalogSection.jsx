@@ -26,7 +26,7 @@ const CatalogSection = ({ vehiclesList, bookNowText }) => {
                         </PrismicNextLink>
                         <div>
                             <PrismicNextLink href={element.data.turo_url} className="">
-                                <div className="mr-6 ml-auto text-white h-auto text-center text-xl font-bold bg-[#e56608ff] -skew-x-12 w-1/3">
+                                <div className="mr-6 ml-auto text-white h-auto text-center xl:text-xl text-lg font-bold bg-[#e56608ff] -skew-x-12 w-1/3">
                                     {bookNowText}
                                 </div>
                             </PrismicNextLink>
@@ -50,7 +50,7 @@ const CatalogSection = ({ vehiclesList, bookNowText }) => {
                         </PrismicNextLink>
                         <div>
                             <PrismicNextLink href={element.data.turo_url} className="">
-                                <div className="mr-6 ml-auto text-white h-auto text-center text-xl font-bold bg-[#e56608ff] -skew-x-12 w-1/3">
+                                <div className="mr-6 ml-auto text-white h-auto text-center xl:text-xl text-lg font-bold bg-[#e56608ff] -skew-x-12 w-1/3">
                                     {bookNowText}
                                 </div>
                             </PrismicNextLink>
