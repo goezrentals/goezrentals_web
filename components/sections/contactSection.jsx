@@ -8,7 +8,7 @@ const ContactSection = props => {
   const { contentContact} = props
 
   return (
-    <div id="contact" className="flex flex-col">
+    <div id="contact" className="overflow-y-hidden">
         <ContactSkewObject content={contentContact} />
     </div>
   );
